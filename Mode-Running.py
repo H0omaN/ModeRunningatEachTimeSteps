@@ -36,8 +36,8 @@ class Storm:
 
 
 folderMRMS="/home/z5194283/hdrive/MET_Tutorial/MyData/RealData/FinalData/"
-folderIMERG=""
-IMERG_files=glob.glob(folder+"IMERG-Comprehensive/*.nc")
+folderIMERG="/srv/ccrc/data60/z5194283/Data/"
+IMERG_files=glob.glob(folderIMERG+"IMERG_Comprehensive_V06/Selected/*.nc")
 IMERG_files.sort()
 MRMS_files = glob.glob(folderMRMS+"MRMS-Regridded/*.nc")
 MRMS_files.sort()
@@ -58,7 +58,7 @@ for files in MRMS_files:
 #   #For IRonly:
 #    OutputAddress = "/home/z5194283/hdrive/MET_Tutorial/MyData/RealData/ModeOutPut-IRonly/ \\"
 #   #For PrecipitationCal:    
-    OutputAddress = "/srv/ccrc/data60/z5194283/OutPuts/ModeOutputs-Th0-minarea/ \\"
+    OutputAddress = "/srv/ccrc/data60/z5194283/OutPuts/ModeOutputs-V06/ \\"
     Script= LoadMTD + "\n" + FcstAddress + "\n" + ObsAddress + "\n" + ConfigAddress + "\n" + "-outdir " + OutputAddress + "\n" + "-v 2" + "\n"    
     subprocess.getstatusoutput(Script)
     print(str(i))
